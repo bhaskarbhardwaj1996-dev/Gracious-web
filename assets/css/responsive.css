@@ -1,0 +1,2449 @@
+/* =============================================================================
+   RESPONSIVE — Media Queries
+   Gracious Smiles Theme
+   Breakpoints: mobile < 640px | tablet 640–1024px | desktop > 1024px
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------
+   TABLET — 640px to 1024px
+   ----------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+    /* Utility bar — hide on tablet */
+    .gs-utility-bar {
+        display: none;
+    }
+
+    /* Navbar */
+    .gs-navbar__nav,
+    .gs-navbar__actions .gs-btn {
+        display: none;
+    }
+
+    .gs-navbar__toggle {
+        display: flex;
+    }
+
+    /* Hero */
+    .gs-hero {
+        min-height: 520px;
+    }
+
+    .gs-hero__heading {
+        font-size: var(--text-3xl);
+    }
+
+    .gs-hero__content {
+        max-width: 560px;
+    }
+
+    /* Grids */
+    .gs-grid--3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gs-grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* -----------------------------------------------------------------------
+   MOBILE — below 640px
+   ----------------------------------------------------------------------- */
+
+@media (max-width: 639px) {
+
+    /* Section spacing */
+    .gs-section {
+        padding-block: var(--section-padding-sm);
+    }
+
+    /* Typography */
+    h1 {
+        font-size: var(--text-2xl);
+    }
+
+    h2 {
+        font-size: var(--text-2xl);
+    }
+
+    h3 {
+        font-size: var(--text-lg);
+    }
+
+    /* Hero */
+    .gs-hero {
+        min-height: 480px;
+    }
+
+    .gs-hero__overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(26, 46, 43, 0.85) 0%,
+            rgba(26, 46, 43, 0.70) 100%
+        );
+    }
+
+    .gs-hero__content {
+        padding-block: var(--section-padding-sm);
+        max-width: 100%;
+    }
+
+    .gs-hero__heading {
+        font-size: var(--text-2xl);
+    }
+
+    .gs-hero__subtext {
+        font-size: var(--text-base);
+    }
+
+    .gs-hero__cta-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .gs-hero__cta-group .gs-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .gs-hero__trust-divider {
+        display: none;
+    }
+
+    /* Grids */
+    .gs-grid--2,
+    .gs-grid--3,
+    .gs-grid--4 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Buttons */
+    .gs-btn--lg {
+        padding: 0.875rem 1.75rem;
+    }
+
+    /* WhatsApp float — lower on mobile to not overlap mobile bottom bar */
+    .gs-whatsapp-float {
+        bottom: 84px;
+    }
+
+}
+
+/* =============================================================================
+   TRUST STRIP — Responsive
+   ============================================================================= */
+
+@media (max-width: 768px) {
+    .gs-trust-strip__track {
+        animation-duration: 24s;
+    }
+
+    .gs-trust-strip__node {
+        padding: 0.75rem 1.5rem;
+        gap: 0.75rem;
+    }
+
+    .gs-trust-strip__node-desc {
+        display: none; /* Keep label only on mobile — clean, scannable */
+    }
+
+    .gs-trust-strip__node-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .gs-trust-strip__sep {
+        padding-inline: 1.25rem;
+    }
+
+    .gs-trust-strip__track-wrap {
+        padding-block: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gs-trust-strip__header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .gs-trust-strip__track {
+        animation-duration: 20s;
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .gs-trust-strip__track {
+        animation: none;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        padding-inline: 1rem;
+    }
+
+    .gs-trust-strip__node-desc {
+        display: inline;
+    }
+
+    .gs-trust-strip__sep {
+        display: none;
+    }
+
+    .gs-trust-strip__track-wrap {
+        -webkit-mask-image: none;
+        mask-image: none;
+        overflow: visible;
+    }
+}
+
+/* SERVICES — Responsive */
+
+@media (max-width: 1024px) {
+
+    .gs-services__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-services__featured-inner {
+        min-height: 320px;
+    }
+
+    .gs-services__featured-index {
+        font-size: 3.5rem;
+    }
+
+    .gs-services__row-inner {
+        padding: 1.25rem 1.5rem;
+        min-height: 80px;
+    }
+
+}
+
+@media (max-width: 639px) {
+
+    .gs-services {
+        padding-block: var(--section-padding-sm);
+    }
+
+    .gs-services__header {
+        margin-bottom: 2.5rem;
+    }
+
+    .gs-services__heading {
+        font-size: var(--text-2xl);
+    }
+
+    .gs-services__grid {
+        border-radius: var(--radius-lg);
+    }
+
+    .gs-services__featured-inner {
+        min-height: 280px;
+        padding: 1.75rem;
+    }
+
+    .gs-services__featured-index {
+        font-size: 2.5rem;
+    }
+
+    .gs-services__featured-title {
+        font-size: var(--text-xl);
+    }
+
+    .gs-services__featured-desc {
+        font-size: var(--text-sm);
+    }
+
+    .gs-services__row-inner {
+        padding: 1rem var(--container-pad);
+        gap: 1rem;
+        min-height: auto;
+    }
+
+    .gs-services__row-desc {
+        display: none;
+    }
+
+    .gs-services__row-title {
+        font-size: var(--text-base);
+    }
+
+    .gs-services__services__footer {
+        justify-content: center;
+    }
+
+}
+
+/* WHY CHOOSE US — Responsive */
+
+@media (max-width: 1024px) {
+
+    .gs-why__layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .gs-why__anchor {
+        position: static;
+    }
+
+    .gs-why__anchor-desc {
+        max-width: 100%;
+    }
+
+    .gs-why__progress {
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-left: none;
+        border-top: 2px solid var(--color-border);
+        padding-left: 0;
+        padding-top: 1rem;
+        gap: 0.5rem;
+    }
+
+    .gs-why__anchor-footer {
+        display: none;
+    }
+
+    .gs-why__progress-item {
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius-full);
+        border: 1px solid var(--color-border);
+        flex-direction: row;
+    }
+
+    .gs-why__progress-item::before {
+        display: none;
+    }
+
+    .gs-why__progress-item.is-active {
+        background-color: var(--color-primary-light);
+        border-color: var(--color-primary);
+    }
+
+    .gs-why__panel.is-active {
+        transform: none;
+    }
+
+}
+
+@media (max-width: 639px) {
+
+    .gs-why {
+        padding-block: var(--section-padding-sm);
+    }
+
+    .gs-why__layout {
+        gap: 2.5rem;
+    }
+
+    .gs-why__heading {
+        font-size: var(--text-2xl);
+    }
+
+    .gs-why__panels {
+        gap: 1rem;
+    }
+
+    .gs-why__panel-inner {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1.5rem;
+    }
+
+    .gs-why__panel-index {
+        font-size: 2rem;
+        width: auto;
+        text-align: left;
+    }
+
+    .gs-why__panel-title {
+        font-size: var(--text-lg);
+    }
+
+    .gs-why__panel-desc {
+        font-size: var(--text-sm);
+    }
+
+    .gs-why__panel.is-active {
+        transform: none;
+    }
+
+}
+
+/* =============================================================================
+   TESTIMONIALS — Responsive
+   Add inside responsive.css under existing section blocks
+   ============================================================================= */
+
+/* TESTIMONIALS — Tablet */
+@media (max-width: 1024px) {
+
+    .gs-testimonials__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .gs-testimonials__aggregate {
+        align-self: flex-start;
+    }
+
+    /* Reflow to 2-column on tablet */
+    .gs-testimonials__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .gs-testimonials__card:nth-child(1) { grid-column: span 2; } /* featured full width */
+    .gs-testimonials__card:nth-child(2) { grid-column: span 1; }
+    .gs-testimonials__card:nth-child(3) { grid-column: span 1; }
+    .gs-testimonials__card:nth-child(4) { grid-column: span 1; }
+    .gs-testimonials__card:nth-child(5) { grid-column: span 1; }
+
+}
+
+/* TESTIMONIALS — Mobile */
+@media (max-width: 639px) {
+
+    .gs-testimonials {
+        padding-block: var(--section-padding-sm);
+    }
+
+    .gs-testimonials__header {
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .gs-testimonials__heading {
+        font-size: var(--text-2xl);
+    }
+
+    .gs-testimonials__aggregate {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 1rem 1.25rem;
+    }
+
+    .gs-testimonials__aggregate-score {
+        font-size: 2rem;
+    }
+
+    /* Single column on mobile */
+    .gs-testimonials__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .gs-testimonials__card:nth-child(1),
+    .gs-testimonials__card:nth-child(2),
+    .gs-testimonials__card:nth-child(3),
+    .gs-testimonials__card:nth-child(4),
+    .gs-testimonials__card:nth-child(5) {
+        grid-column: span 1;
+    }
+
+    .gs-testimonials__card-inner {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .gs-testimonials__card--featured .gs-testimonials__text p {
+        font-size: var(--text-base);
+    }
+
+    .gs-testimonials__text p {
+        font-size: var(--text-sm);
+        line-height: 1.75;
+    }
+
+    .gs-testimonials__author {
+        padding-top: 1rem;
+        gap: 0.75rem;
+    }
+
+    .gs-testimonials__footer {
+        margin-top: 2rem;
+    }
+
+    .gs-testimonials__footer .gs-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+/* CTA BLOCK — Responsive */
+
+@media (max-width: 1024px) {
+
+    .gs-cta__layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .gs-cta__content {
+        max-width: 100%;
+    }
+
+    .gs-cta__heading {
+        font-size: var(--text-3xl);
+    }
+
+    .gs-cta__subtext {
+        font-size: var(--text-base);
+    }
+
+    .gs-cta__panel {
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 639px) {
+
+    .gs-cta {
+        padding-block: var(--section-padding-sm);
+    }
+
+    .gs-cta__ticker {
+        margin-bottom: 2rem;
+    }
+
+    .gs-cta__ticker-group {
+        font-size: 0.625rem;
+    }
+
+    .gs-cta__heading {
+        font-size: var(--text-2xl);
+    }
+
+    .gs-cta__subtext {
+        font-size: var(--text-sm);
+        margin-bottom: var(--gap-lg);
+    }
+
+    .gs-cta__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--gap-md);
+    }
+
+    .gs-cta__btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .gs-cta__phone {
+        justify-content: center;
+    }
+
+    .gs-cta__panel {
+        padding: 1.25rem;
+    }
+
+    .gs-cta__panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .gs-cta__slot-inner {
+        padding: 0.75rem 0.875rem;
+    }
+
+    .gs-cta__slot-when {
+        width: 72px;
+    }
+
+    .gs-cta__slot-type {
+        font-size: var(--text-xs);
+    }
+
+    .gs-cta__glow {
+        width: 320px;
+        height: 320px;
+        top: -5%;
+        right: -20%;
+    }
+
+}
+
+/* CONTACT SECTION — Responsive */
+
+@media (max-width: 1024px) {
+
+    .gs-contact__header {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .gs-contact__intro {
+        max-width: 100%;
+    }
+
+    .gs-contact__layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+}
+
+@media (max-width: 639px) {
+
+    .gs-contact {
+        padding-block: var(--section-padding-sm);
+    }
+
+    .gs-contact__heading {
+        font-size: var(--text-2xl);
+    }
+
+    .gs-contact__row--split {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .gs-contact__form {
+        padding: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .gs-contact__quick-action {
+        padding: 1rem;
+    }
+
+    .gs-contact__quick-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .gs-contact__hours-row {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .gs-contact__hours-time {
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+}
+
+/* FOOTER — Responsive */
+
+@media (max-width: 1024px) {
+
+    .gs-footer__closure-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .gs-footer__closure-cta {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .gs-footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem 3rem;
+    }
+
+    .gs-footer__col--brand {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .gs-footer__brand-desc {
+        max-width: 48ch;
+    }
+
+}
+
+@media (max-width: 639px) {
+
+    .gs-footer__closure {
+        padding-block: 2.5rem;
+    }
+
+    .gs-footer__closure-tagline {
+        font-size: 1.25rem;
+    }
+
+    .gs-footer__closure-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0.875rem;
+    }
+
+    .gs-footer__closure-cta .gs-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .gs-footer__body {
+        padding-block: 3rem 2rem;
+    }
+
+    .gs-footer__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .gs-footer__col--brand {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .gs-footer__brand-desc {
+        max-width: 100%;
+    }
+
+    .gs-footer__base-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .gs-footer__base-sep {
+        display: none;
+    }
+
+}
+
+/* ABOUT PAGE — Responsive */
+
+@media (max-width: 1024px) {
+
+    .gs-about-hero__layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .gs-about-hero__content {
+        padding: var(--section-padding-md) var(--container-pad);
+        order: 1;
+    }
+
+    .gs-about-hero__content-inner {
+        max-width: 100%;
+    }
+
+    .gs-about-hero__image {
+        order: 0;
+        min-height: 320px;
+    }
+
+    .gs-about-hero__badge {
+        left: 1.5rem;
+    }
+
+    .gs-about-story__layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .gs-about-story__stats {
+        padding-top: 0;
+    }
+
+    .gs-about-diff__row {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .gs-about-diff__row-tag {
+        display: none;
+    }
+
+    .gs-about-values__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gs-about-cta__inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .gs-about-cta__actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 639px) {
+
+    .gs-about-hero__lead {
+        font-size: var(--text-base);
+    }
+
+    .gs-about-hero__actions {
+        flex-direction: column;
+    }
+
+    .gs-about-hero__actions .gs-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .gs-about-philosophy {
+        padding-block: 3rem;
+    }
+
+    .gs-about-philosophy__inner {
+        gap: 1rem;
+    }
+
+    .gs-about-philosophy__quote {
+        font-size: 3rem;
+    }
+
+    .gs-about-story__stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .gs-about-stat {
+        padding: 1.25rem;
+    }
+
+    .gs-about-hero__signals {
+        gap: 0.625rem;
+    }
+
+    .gs-about-hero__reassurance {
+        font-size: 0.7rem;
+    }
+
+    .gs-about-stat__num {
+        font-size: 2rem;
+    }
+
+    .gs-about-diff__row {
+        grid-template-columns: 32px 1fr;
+        gap: 1rem;
+        padding: 1.75rem 0;
+    }
+
+    .gs-about-diff__row-body h3 {
+        font-size: var(--text-lg);
+    }
+
+    .gs-about-values__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-about-cta__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .gs-about-cta__actions .gs-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+/* =============================================================================
+   SERVICES PAGE — Responsive Overrides
+   Append this block to assets/css/responsive.css
+   All breakpoints for gs-svc-* components live here.
+   Breakpoints:
+     --bp-xl  : 1280px  (large desktop)
+     --bp-lg  : 1024px  (laptop / small desktop)
+     --bp-md  : 768px   (tablet)
+     --bp-sm  : 640px   (large phone)
+     --bp-xs  : 480px   (small phone)
+   ============================================================================= */
+
+
+/* =============================================================================
+   LARGE DESKTOP — max-width: 1280px
+   Tighten grid gaps, slightly compress hero stats cluster
+   ============================================================================= */
+
+@media (max-width: 1280px) {
+
+    /* Hero */
+    .gs-svc-hero__content {
+        grid-template-columns: 1fr 360px;
+        gap: 3rem;
+    }
+
+    .gs-svc-hero__stat-cluster {
+        max-width: 340px;
+    }
+
+    /* Spotlight */
+    .gs-svc-spotlight__row {
+        grid-template-columns: 360px 1fr;
+        gap: 2.75rem;
+    }
+
+    .gs-svc-spotlight__row--reverse {
+        grid-template-columns: 1fr 360px;
+    }
+
+    /* Standards */
+    .gs-svc-standards__layout {
+        gap: 3.5rem;
+    }
+
+    /* FAQ */
+    .gs-svc-faq__layout {
+        gap: 3.5rem;
+    }
+
+}
+
+
+/* =============================================================================
+   LAPTOP — max-width: 1024px
+   Stack spotlight rows, adjust grids
+   ============================================================================= */
+
+@media (max-width: 1024px) {
+
+    /* Hero — stack to single column */
+    .gs-svc-hero__content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .gs-svc-hero__right {
+        justify-content: flex-start;
+    }
+
+    .gs-svc-hero__stat-cluster {
+        max-width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gs-svc-hero__stat--a {
+        grid-column: span 4;
+        flex-direction: row;
+    }
+
+    /* Navigator tabs — allow wrap naturally, already wraps */
+
+    /* Service grid — 8-col at laptop */
+    .gs-svc-grid__card:nth-child(1) { grid-column: span 4; }
+    .gs-svc-grid__card:nth-child(2) { grid-column: span 8; }
+    .gs-svc-grid__card:nth-child(3) { grid-column: span 4; }
+    .gs-svc-grid__card:nth-child(4) { grid-column: span 4; }
+    .gs-svc-grid__card:nth-child(5) { grid-column: span 4; }
+    .gs-svc-grid__card:nth-child(6) { grid-column: span 4; }
+    .gs-svc-grid__card:nth-child(7) { grid-column: span 6; }
+    .gs-svc-grid__card:nth-child(8) { grid-column: span 6; }
+
+    /* Spotlight rows — stack */
+    .gs-svc-spotlight__row,
+    .gs-svc-spotlight__row--reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .gs-svc-spotlight__row--reverse .gs-svc-spotlight__visual {
+        order: 0;
+    }
+
+    .gs-svc-spotlight__row--reverse .gs-svc-spotlight__content {
+        order: 1;
+    }
+
+    .gs-svc-spotlight__visual {
+        min-height: 300px;
+    }
+
+    /* Standards — stack */
+    .gs-svc-standards__layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .gs-svc-standards__left {
+        position: static;
+    }
+
+    /* Hide the decorative image pseudo-element on laptop — saves vertical space */
+    .gs-svc-standards__left::after {
+        display: none;
+    }
+
+    .gs-svc-standards__right {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Process — compress */
+    .gs-svc-process__step-body {
+        padding-right: 0.75rem;
+    }
+
+    .gs-svc-process__step-desc {
+        max-width: 18ch;
+    }
+
+    /* FAQ — stack */
+    .gs-svc-faq__layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .gs-svc-faq__left {
+        position: static;
+    }
+
+    .gs-svc-faq__left::after {
+        display: none;
+    }
+
+}
+
+
+/* =============================================================================
+   TABLET — max-width: 768px
+   ============================================================================= */
+
+@media (max-width: 768px) {
+
+    /* Hero */
+    .gs-svc-hero {
+        min-height: auto;
+    }
+
+    .gs-svc-hero__heading {
+        font-size: var(--text-3xl);
+    }
+
+    .gs-svc-hero__subtext {
+        font-size: var(--text-base);
+    }
+
+    .gs-svc-hero__actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gs-svc-hero__stat-cluster {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gs-svc-hero__stat--a {
+        grid-column: span 2;
+    }
+
+    /* Navigator tabs — 2-col wrapping grid */
+    .gs-svc-nav__tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.625rem;
+    }
+
+    .gs-svc-nav__panel-header {
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: flex-start;
+    }
+
+    .gs-svc-nav__panel-cta {
+        align-self: stretch;
+        justify-content: center;
+    }
+
+    /* Navigator service list — single column */
+    .gs-svc-nav__service-list {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-svc-nav__service-item {
+        border-right: none;
+    }
+
+    .gs-svc-nav__service-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .gs-svc-nav__service-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Grid header — stack */
+    .gs-svc-grid__header {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Service grid — simpler 6-col */
+    .gs-svc-grid__cards {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
+    }
+
+    .gs-svc-grid__card:nth-child(1) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(2) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(3) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(4) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(5) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(6) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(7) { grid-column: span 6; }
+    .gs-svc-grid__card:nth-child(8) { grid-column: span 6; }
+
+    /* Spotlight two-col sub-blocks */
+    .gs-svc-spotlight__two-col {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Spotlight row spacing */
+    .gs-svc-spotlight__row {
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Standards grid — single column on tablet */
+    .gs-svc-standards__right {
+        grid-template-columns: 1fr;
+    }
+
+    /* Process — vertical stack */
+    .gs-svc-process__track {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .gs-svc-process__step {
+        flex-direction: row;
+        gap: 1.25rem;
+        flex: none;
+        width: 100%;
+    }
+
+    .gs-svc-process__step-num-wrap {
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .gs-svc-process__step-connector {
+        width: 1px;
+        height: 100%;
+        min-height: 2.5rem;
+        background: linear-gradient(to bottom, rgba(58, 158, 143, 0.5), rgba(255,255,255,0.1));
+        margin-left: 0;
+        flex: 1;
+    }
+
+    .gs-svc-process__step-body {
+        padding-right: 0;
+        padding-bottom: 2rem;
+    }
+
+    .gs-svc-process__step-desc {
+        max-width: none;
+    }
+
+    /* Closure trust rail — vertical */
+    .gs-svc-closure__trust-rail {
+        flex-direction: column;
+        border-radius: var(--radius-xl);
+        align-items: flex-start;
+        gap: 0.875rem;
+        padding: 1.5rem;
+    }
+
+    .gs-svc-closure__trust-item {
+        white-space: normal;
+    }
+
+    .gs-svc-closure__heading {
+        font-size: var(--text-3xl);
+    }
+
+}
+
+
+/* =============================================================================
+   LARGE PHONE — max-width: 640px
+   ============================================================================= */
+
+@media (max-width: 640px) {
+
+    /* Hero */
+    .gs-svc-hero__inner {
+        padding-top: calc(var(--section-padding) + 0.5rem);
+    }
+
+    .gs-svc-hero__stat-cluster {
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+    }
+
+    .gs-svc-hero__stat--a {
+        grid-column: span 2;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gs-svc-hero__stat--a .gs-svc-hero__stat-num {
+        font-size: var(--text-2xl);
+    }
+
+    /* Navigator tabs — full width per tab */
+    .gs-svc-nav__tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-svc-nav__tab {
+        width: 100%;
+    }
+
+    .gs-svc-nav__panel-header {
+        padding: 1.5rem;
+    }
+
+    .gs-svc-nav__service-list {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-svc-nav__service-item {
+        padding: 1.125rem 1.5rem;
+    }
+
+    /* Service grid — single column */
+    .gs-svc-grid__cards {
+        grid-template-columns: 1fr;
+        gap: 0.875rem;
+    }
+
+    .gs-svc-grid__card:nth-child(n) {
+        grid-column: span 1;
+    }
+
+    /* Spotlight visual — shorter on phones */
+    .gs-svc-spotlight__visual {
+        min-height: 240px;
+    }
+
+    .gs-svc-spotlight__visual-num {
+        font-size: 4rem;
+    }
+
+    /* Reassurance strip — stack on mobile */
+    .gs-svc-spotlight__reassurance-strip {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .gs-svc-spotlight__reassurance-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0;
+    }
+
+    .gs-svc-spotlight__reassurance-item {
+        padding: 1rem;
+    }
+
+    /* Standards grid — single column */
+    .gs-svc-standards__right {
+        grid-template-columns: 1fr;
+    }
+
+    /* Process — keep vertical, tighten */
+    .gs-svc-process__step-num {
+        width: 40px;
+        height: 40px;
+        font-size: var(--text-xs);
+    }
+
+    /* FAQ */
+    .gs-svc-faq__cta-block {
+        gap: 0.625rem;
+    }
+
+    /* Closure */
+    .gs-svc-closure__actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .gs-svc-closure__phone {
+        font-size: var(--text-sm);
+    }
+
+    .gs-svc-closure__trust-rail {
+        width: 100%;
+    }
+
+    /* Grid header */
+    .gs-svc-grid__header {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =============================================================================
+   SMALL PHONE — max-width: 480px
+   ============================================================================= */
+
+@media (max-width: 480px) {
+
+    /* Hero — minimal */
+    .gs-svc-hero__stat-cluster {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gs-svc-hero__stat--a {
+        grid-column: span 2;
+    }
+
+    .gs-svc-hero__stat--c {
+        grid-column: span 2;
+    }
+
+    .gs-svc-hero__heading {
+        font-size: clamp(1.75rem, 7vw, var(--text-3xl));
+    }
+
+    /* Navigator tab — compact */
+    .gs-svc-nav__tab {
+        padding: 0.75rem 1rem;
+    }
+
+    .gs-svc-nav__tab-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    /* Spotlight content */
+    .gs-svc-spotlight__lead {
+        font-size: var(--text-base);
+    }
+
+    /* Process */
+    .gs-svc-process__step-title {
+        font-size: var(--text-sm);
+    }
+
+    /* Closure */
+    .gs-svc-closure__heading {
+        font-size: var(--text-2xl);
+    }
+
+    .gs-svc-closure__subtext {
+        font-size: var(--text-base);
+    }
+
+    .gs-svc-closure__trust-rail {
+        padding: 1.25rem;
+        border-radius: var(--radius-lg);
+    }
+
+    /* Card inner padding reduction */
+    .gs-svc-grid__card-inner {
+        padding: 1.25rem;
+    }
+
+    /* FAQ question padding */
+    .gs-svc-faq__question {
+        padding: 1.125rem 0;
+        gap: 1rem;
+    }
+
+}
+
+/* CONTACT PAGE — Responsive */
+
+@media (max-width: 1024px) {
+
+    .gs-ct-hero__actions {
+        grid-template-columns: 1fr;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .gs-ct-main__layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .gs-ct-main__info-col {
+        padding-top: 0;
+    }
+
+    .gs-ct-map {
+        height: auto;
+    }
+
+    .gs-ct-map__inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: 320px auto;
+    }
+
+    .gs-ct-map__embed {
+        height: 320px;
+    }
+
+    .gs-ct-map__panel {
+        position: static;
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid var(--color-border);
+        box-shadow: none;
+    }
+
+    .gs-ct-map__panel-inner {
+        padding: 1.75rem var(--container-pad);
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .gs-ct-map__panel-actions {
+        flex-direction: row;
+        margin-left: auto;
+    }
+
+    .gs-ct-map__panel-actions .gs-btn {
+        width: auto;
+    }
+
+}
+
+@media (max-width: 639px) {
+
+    .gs-ct-hero {
+        padding-block: var(--section-padding-sm) 0;
+    }
+
+    .gs-ct-hero__subtext {
+        font-size: var(--text-base);
+    }
+
+    .gs-ct-hero__action {
+        padding: 1.125rem var(--container-pad);
+    }
+
+    .gs-ct-hero__action-value {
+        font-size: var(--text-xs);
+    }
+
+    .gs-ct-main {
+        padding-block: var(--section-padding-sm);
+    }
+
+    .gs-ct-form__row--2col {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .gs-ct-info-card__hour-row {
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .gs-ct-info-card__hour-time {
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .gs-ct-map__panel-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gs-ct-map__panel-actions {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .gs-ct-map__panel-actions .gs-btn {
+        flex: 1;
+    }
+
+}
+
+/* =============================================================================
+   SERVICES PAGE — Responsive Overrides
+   Append to the END of assets/css/responsive.css
+   Matches exactly the classes in services.css and template-parts/services.php
+   ============================================================================= */
+
+
+/* =============================================================================
+   MAX-WIDTH: 1280px — Large desktop tightening
+   ============================================================================= */
+
+@media (max-width: 1280px) {
+
+    .gs-svc-hero__content {
+        grid-template-columns: 1fr 360px;
+        gap: 3rem;
+    }
+
+    .gs-svc-hero__stat-cluster {
+        max-width: 340px;
+    }
+
+    .gs-svc-spotlight__row {
+        grid-template-columns: 360px 1fr;
+        gap: 2.75rem;
+    }
+
+    .gs-svc-spotlight__row--reverse {
+        grid-template-columns: 1fr 360px;
+    }
+
+    .gs-svc-standards__layout {
+        gap: 3.5rem;
+    }
+
+    .gs-svc-faq__layout {
+        gap: 3.5rem;
+    }
+
+}
+
+
+/* =============================================================================
+   MAX-WIDTH: 1024px — Laptop / small desktop
+   ============================================================================= */
+
+@media (max-width: 1024px) {
+
+    /* Hero — single column */
+    .gs-svc-hero__content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .gs-svc-hero__right {
+        justify-content: flex-start;
+    }
+
+    .gs-svc-hero__stat-cluster {
+        max-width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gs-svc-hero__stat--a {
+        grid-column: span 4;
+    }
+
+    /* Service category grid — rebalance spans */
+    .gs-svc-grid__card:nth-child(1) { grid-column: span 4; }
+    .gs-svc-grid__card:nth-child(2) { grid-column: span 8; }
+    .gs-svc-grid__card:nth-child(3) { grid-column: span 4; }
+    .gs-svc-grid__card:nth-child(4) { grid-column: span 4; }
+    .gs-svc-grid__card:nth-child(5) { grid-column: span 4; }
+    .gs-svc-grid__card:nth-child(6) { grid-column: span 4; }
+    .gs-svc-grid__card:nth-child(7) { grid-column: span 6; }
+    .gs-svc-grid__card:nth-child(8) { grid-column: span 6; }
+
+    /* Spotlight — stack all rows */
+    .gs-svc-spotlight__row,
+    .gs-svc-spotlight__row--reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Reset reverse ordering on stack */
+    .gs-svc-spotlight__row--reverse .gs-svc-spotlight__visual {
+        order: 0;
+    }
+
+    .gs-svc-spotlight__row--reverse .gs-svc-spotlight__content {
+        order: 1;
+    }
+
+    .gs-svc-spotlight__visual {
+        min-height: 300px;
+    }
+
+    .gs-svc-spotlight__row {
+        margin-bottom: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    /* Standards — stack left/right */
+    .gs-svc-standards__layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .gs-svc-standards__left {
+        position: static;
+    }
+
+    /* Hide team photo pseudo-element at this breakpoint */
+    .gs-svc-standards__left::after {
+        display: none;
+    }
+
+    /* Standards right — keep 2 col */
+    .gs-svc-standards__right {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Process step text — reduce ch limit */
+    .gs-svc-process__step-body {
+        padding-right: 0.75rem;
+    }
+
+    .gs-svc-process__step-desc {
+        max-width: 18ch;
+    }
+
+    /* FAQ — stack left/right */
+    .gs-svc-faq__layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .gs-svc-faq__left {
+        position: static;
+    }
+
+}
+
+
+/* =============================================================================
+   MAX-WIDTH: 768px — Tablet
+   ============================================================================= */
+
+@media (max-width: 768px) {
+
+    /* Hero */
+    .gs-svc-hero {
+        min-height: auto;
+    }
+
+    .gs-svc-hero__heading {
+        font-size: var(--text-3xl);
+    }
+
+    .gs-svc-hero__subtext {
+        font-size: var(--text-base);
+    }
+
+    .gs-svc-hero__actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gs-svc-hero__stat-cluster {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gs-svc-hero__stat--a {
+        grid-column: span 2;
+    }
+
+    /* Concern nav tabs — 2-column grid */
+    .gs-svc-nav__tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.625rem;
+    }
+
+    /* Panel header — stack vertically */
+    .gs-svc-nav__panel-header {
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: flex-start;
+    }
+
+    .gs-svc-nav__panel-cta {
+        align-self: stretch;
+        justify-content: center;
+    }
+
+    /* Service list in panel — single column */
+    .gs-svc-nav__service-list {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-svc-nav__service-item {
+        border-right: none;
+    }
+
+    /* Fix border-bottom rules for single-column */
+    .gs-svc-nav__service-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .gs-svc-nav__service-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Grid section header — stack */
+    .gs-svc-grid__header {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Service cards — 6-col base, pairs */
+    .gs-svc-grid__cards {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
+    }
+
+    .gs-svc-grid__card:nth-child(1) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(2) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(3) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(4) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(5) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(6) { grid-column: span 3; }
+    .gs-svc-grid__card:nth-child(7) { grid-column: span 6; }
+    .gs-svc-grid__card:nth-child(8) { grid-column: span 6; }
+
+    /* Spotlight two-col info block — stack */
+    .gs-svc-spotlight__two-col {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Spotlight row spacing */
+    .gs-svc-spotlight__row {
+        margin-bottom: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    /* Standards right — single column on tablet */
+    .gs-svc-standards__right {
+        grid-template-columns: 1fr;
+    }
+
+    /* Process — switch from horizontal track to vertical stack */
+    .gs-svc-process__track {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .gs-svc-process__step {
+        flex-direction: row;
+        gap: 1.25rem;
+        flex: none;
+        width: 100%;
+    }
+
+    .gs-svc-process__step-num-wrap {
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    /* Connector becomes vertical line */
+    .gs-svc-process__step-connector {
+        width: 1px;
+        height: 100%;
+        min-height: 2.5rem;
+        flex: 1;
+        background: linear-gradient(to bottom, rgba(58, 158, 143, 0.5), rgba(255, 255, 255, 0.1));
+        margin-left: 0;
+    }
+
+    .gs-svc-process__step-body {
+        padding-right: 0;
+        padding-bottom: 2rem;
+    }
+
+    .gs-svc-process__step-desc {
+        max-width: none;
+    }
+
+    /* Closure trust rail — vertical on tablet */
+    .gs-svc-closure__trust-rail {
+        flex-direction: column;
+        border-radius: var(--radius-xl);
+        align-items: flex-start;
+        gap: 0.875rem;
+        padding: 1.5rem;
+    }
+
+    .gs-svc-closure__trust-item {
+        white-space: normal;
+    }
+
+    .gs-svc-closure__heading {
+        font-size: var(--text-3xl);
+    }
+
+}
+
+
+/* =============================================================================
+   MAX-WIDTH: 640px — Large phone
+   ============================================================================= */
+
+@media (max-width: 640px) {
+
+    /* Hero stat cluster — 2 col */
+    .gs-svc-hero__stat-cluster {
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+    }
+
+    .gs-svc-hero__stat--a {
+        grid-column: span 2;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gs-svc-hero__stat--a .gs-svc-hero__stat-num {
+        font-size: var(--text-2xl);
+    }
+
+    /* Nav tabs — single column */
+    .gs-svc-nav__tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-svc-nav__panel-header {
+        padding: 1.5rem;
+    }
+
+    .gs-svc-nav__service-item {
+        padding: 1.125rem 1.5rem;
+    }
+
+    /* Service cards — full width single column */
+    .gs-svc-grid__cards {
+        grid-template-columns: 1fr;
+        gap: 0.875rem;
+    }
+
+    .gs-svc-grid__card:nth-child(n) {
+        grid-column: span 1;
+    }
+
+    /* Spotlight visual — shorter */
+    .gs-svc-spotlight__visual {
+        min-height: 240px;
+    }
+
+    .gs-svc-spotlight__visual-num {
+        font-size: 4rem;
+    }
+
+    /* Reassurance strip — vertical stack */
+    .gs-svc-spotlight__reassurance-strip {
+        flex-direction: column;
+    }
+
+    .gs-svc-spotlight__reassurance-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0;
+    }
+
+    .gs-svc-spotlight__reassurance-item {
+        padding: 1rem;
+    }
+
+    /* Process step number — slightly smaller */
+    .gs-svc-process__step-num {
+        width: 40px;
+        height: 40px;
+        font-size: var(--text-xs);
+    }
+
+    /* Closure */
+    .gs-svc-closure__actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .gs-svc-closure__phone {
+        font-size: var(--text-sm);
+    }
+
+    .gs-svc-closure__trust-rail {
+        width: 100%;
+    }
+
+}
+
+
+/* =============================================================================
+   MAX-WIDTH: 480px — Small phone
+   ============================================================================= */
+
+@media (max-width: 480px) {
+
+    /* Hero */
+    .gs-svc-hero__heading {
+        font-size: clamp(1.75rem, 7vw, var(--text-3xl));
+    }
+
+    .gs-svc-hero__stat--c {
+        grid-column: span 2;
+    }
+
+    /* Nav tab — compact padding */
+    .gs-svc-nav__tab {
+        padding: 0.75rem 1rem;
+    }
+
+    .gs-svc-nav__tab-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    /* Card inner padding */
+    .gs-svc-grid__card-inner {
+        padding: 1.25rem;
+    }
+
+    /* Spotlight */
+    .gs-svc-spotlight__lead {
+        font-size: var(--text-base);
+    }
+
+    /* Process */
+    .gs-svc-process__step-title {
+        font-size: var(--text-sm);
+    }
+
+    /* FAQ */
+    .gs-svc-faq__question {
+        padding: 1.125rem 0;
+        gap: 1rem;
+    }
+
+    /* Closure */
+    .gs-svc-closure__heading {
+        font-size: var(--text-2xl);
+    }
+
+    .gs-svc-closure__subtext {
+        font-size: var(--text-base);
+    }
+
+    .gs-svc-closure__trust-rail {
+        padding: 1.25rem;
+        border-radius: var(--radius-lg);
+    }
+
+}
+
+/* =============================================================================
+   MEET THE DOCTOR — Responsive Media Queries
+   File: responsive.css
+   Breakpoints:
+     ≤ 1200px  — Large tablet / small laptop
+     ≤ 1024px  — Tablet landscape
+     ≤  768px  — Tablet portrait
+     ≤  480px  — Mobile
+     ≤  375px  — Small mobile
+   ============================================================================= */
+
+
+/* =============================================================================
+   ≤ 1200px — Large tablet / small laptop
+   ============================================================================= */
+@media (max-width: 1200px) {
+
+    /* 1. HERO */
+    .gs-dr-hero__inner {
+        grid-template-columns: 360px 1fr;
+        gap: clamp(2rem, 4vw, 3rem);
+    }
+
+    /* 4. CREDENTIALS */
+    .gs-dr-credentials__layout {
+        gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    /* 5. TEAM */
+    .gs-dr-team__grid {
+        grid-template-columns: 1.2fr 1fr 1fr;
+    }
+
+    /* 7. CTA CLOSURE */
+    .gs-dr-closure__inner {
+        grid-template-columns: 280px 1fr;
+    }
+
+    .gs-dr-closure__portrait-wrap {
+        max-width: 280px;
+    }
+}
+
+
+/* =============================================================================
+   ≤ 1024px — Tablet landscape
+   ============================================================================= */
+@media (max-width: 1024px) {
+
+    /* 1. HERO */
+    .gs-dr-hero__inner {
+        grid-template-columns: 300px 1fr;
+        gap: 2rem;
+    }
+
+    .gs-dr-hero__heading {
+        font-size: clamp(2rem, 4.5vw, 3rem);
+    }
+
+    .gs-dr-hero__portrait-badge {
+        right: -0.5rem;
+        padding: 0.875rem 1rem;
+    }
+
+    /* 2. PHILOSOPHY */
+    .gs-dr-philosophy__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-dr-philosophy__item {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .gs-dr-philosophy__item:last-child {
+        border-bottom: none;
+    }
+
+    /* 3. STORY */
+    .gs-dr-story__layout {
+        grid-template-columns: 1fr 1.3fr;
+        gap: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .gs-dr-story__anchor {
+        position: static;
+        top: auto;
+    }
+
+    /* 4. CREDENTIALS */
+    .gs-dr-credentials__layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    /* 5. TEAM */
+    .gs-dr-team__grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .gs-dr-team__image-card--wide {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .gs-dr-team__specialists {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .gs-dr-team__image-card--tall {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .gs-dr-team__image-card--tall .gs-dr-team__img {
+        aspect-ratio: 4/3;
+    }
+
+    .gs-dr-team__access-strip {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gs-dr-team__access-strip .gs-dr-team__access-item:last-child {
+        grid-column: 1 / -1;
+    }
+
+    /* 6. PATIENT VOICE */
+    .gs-dr-voice__layout {
+        grid-template-columns: 1fr 1.2fr;
+        gap: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    /* 7. CTA CLOSURE */
+    .gs-dr-closure__inner {
+        grid-template-columns: 240px 1fr;
+        gap: 2rem;
+    }
+
+    .gs-dr-closure__portrait-wrap {
+        max-width: 240px;
+    }
+}
+
+
+/* =============================================================================
+   ≤ 768px — Tablet portrait / large mobile
+   ============================================================================= */
+@media (max-width: 768px) {
+
+    /* 1. HERO */
+    .gs-dr-hero {
+        padding-block: clamp(3rem, 6vw, 4.5rem) clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .gs-dr-hero__inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .gs-dr-hero__portrait-col {
+        max-width: 380px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .gs-dr-hero__portrait-frame {
+        aspect-ratio: 3 / 3.5;
+    }
+
+    .gs-dr-hero__portrait-badge {
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .gs-dr-hero__content-col {
+        gap: 1.25rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .gs-dr-hero__heading {
+        font-size: clamp(2.25rem, 6vw, 3rem);
+    }
+
+    .gs-dr-hero__intro {
+        font-size: var(--text-base);
+        max-width: 100%;
+    }
+
+    .gs-dr-hero__actions {
+        justify-content: center;
+    }
+
+    .gs-dr-hero__trust-strip {
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    /* 2. PHILOSOPHY */
+    .gs-dr-philosophy__item {
+        padding: 2rem 1.75rem;
+    }
+
+    /* 3. STORY */
+    .gs-dr-story__layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .gs-dr-story__anchor {
+        position: static;
+        top: auto;
+    }
+
+    .gs-dr-story__anchor-image-wrap {
+        max-height: 280px;
+        overflow: hidden;
+    }
+
+    .gs-dr-story__anchor-image {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* 4. CREDENTIALS */
+    .gs-dr-credentials__qual-item {
+        padding: 1.5rem 1.5rem;
+    }
+
+    /* 5. TEAM */
+    .gs-dr-team__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .gs-dr-team__image-card--wide {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .gs-dr-team__specialists {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .gs-dr-team__image-card--tall {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .gs-dr-team__image-card--tall .gs-dr-team__img {
+        aspect-ratio: 16/9;
+    }
+
+    .gs-dr-team__access-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .gs-dr-team__access-strip .gs-dr-team__access-item:last-child {
+        grid-column: 1;
+    }
+
+    /* 6. PATIENT VOICE */
+    .gs-dr-voice__layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .gs-dr-voice__left {
+        gap: 1rem;
+    }
+
+    .gs-dr-voice__rating-num {
+        font-size: 2.75rem;
+    }
+
+    .gs-dr-voice__featured-quote {
+        padding: 2rem;
+    }
+
+    /* 7. CTA CLOSURE */
+    .gs-dr-closure__inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .gs-dr-closure__portrait-wrap {
+        max-width: 260px;
+        margin-inline: auto;
+    }
+
+    .gs-dr-closure__content {
+        align-items: center;
+    }
+
+    .gs-dr-closure__subtext {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .gs-dr-closure__actions {
+        justify-content: center;
+    }
+
+    .gs-dr-closure__heading {
+        font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+    }
+}
+
+
+/* =============================================================================
+   ≤ 480px — Mobile
+   ============================================================================= */
+@media (max-width: 480px) {
+
+    /* 1. HERO */
+    .gs-dr-hero__portrait-col {
+        max-width: 100%;
+    }
+
+    .gs-dr-hero__portrait-frame {
+        aspect-ratio: 3 / 3.8;
+    }
+
+    .gs-dr-hero__portrait-badge {
+        right: 0.75rem;
+        bottom: 0.75rem;
+        padding: 0.75rem 0.875rem;
+    }
+
+    .gs-dr-hero__portrait-badge-num {
+        font-size: var(--text-xl);
+    }
+
+    .gs-dr-hero__trust-strip {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem 1.5rem;
+    }
+
+    .gs-dr-hero__trust-divider {
+        display: none;
+    }
+
+    .gs-dr-hero__actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.875rem;
+        width: 100%;
+    }
+
+    .gs-dr-hero__actions .gs-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* 2. PHILOSOPHY */
+    .gs-dr-philosophy__item {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .gs-dr-philosophy__icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* 3. STORY */
+    .gs-dr-story__highlight-card {
+        padding: 1.5rem;
+    }
+
+    .gs-dr-story__quote p {
+        font-size: var(--text-base);
+    }
+
+    /* 4. CREDENTIALS */
+    .gs-dr-credentials__qual-item {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .gs-dr-credentials__qual-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .gs-dr-credentials__spec-tags {
+        gap: 0.375rem;
+    }
+
+    .gs-dr-credentials__spec-tag {
+        font-size: var(--text-xs);
+        padding: 0.35rem 0.75rem;
+    }
+
+    /* 5. TEAM */
+    .gs-dr-team__specialists {
+        padding: 1.5rem;
+    }
+
+    .gs-dr-team__access-item {
+        padding: 1.25rem;
+        gap: 0.875rem;
+    }
+
+    .gs-dr-team__access-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* 6. PATIENT VOICE */
+    .gs-dr-voice__featured-quote {
+        padding: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .gs-dr-voice__quote-text {
+        font-size: var(--text-sm);
+    }
+
+    .gs-dr-voice__mini-item {
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0.875rem 1rem;
+    }
+
+    /* 7. CTA CLOSURE */
+    .gs-dr-closure__actions {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .gs-dr-closure__actions .gs-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* =============================================================================
+   ≤ 375px — Small mobile (iPhone SE, Galaxy A series, etc.)
+   ============================================================================= */
+@media (max-width: 375px) {
+
+    /* 1. HERO */
+    .gs-dr-hero__heading {
+        font-size: clamp(1.875rem, 8vw, 2.25rem);
+    }
+
+    .gs-dr-hero__intro {
+        font-size: var(--text-sm);
+    }
+
+    .gs-dr-hero__portrait-frame {
+        aspect-ratio: 4 / 4.5;
+    }
+
+    /* 2. PHILOSOPHY */
+    .gs-dr-philosophy__title {
+        font-size: var(--text-base);
+    }
+
+    /* 3. STORY */
+    .gs-dr-story__highlight-card {
+        padding: 1.25rem;
+    }
+
+    /* 5. TEAM */
+    .gs-dr-team__specialists {
+        padding: 1.25rem;
+    }
+
+    .gs-dr-team__access-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    /* 6. PATIENT VOICE */
+    .gs-dr-voice__featured-quote {
+        padding: 1.25rem;
+    }
+
+    .gs-dr-voice__rating-num {
+        font-size: 2.25rem;
+    }
+
+    /* 7. CTA CLOSURE */
+    .gs-dr-closure__portrait-wrap {
+        max-width: 200px;
+    }
+
+    .gs-dr-closure__subtext {
+        font-size: var(--text-base);
+    }
+}
